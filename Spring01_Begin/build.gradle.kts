@@ -1,12 +1,12 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-    val kotlinVersion = "1.8.0"
-    id("org.springframework.boot") version "3.1.1"
-    id("io.spring.dependency-management") version "1.1.1"
+    val kotlinVersion = "1.9.0"
+    id("org.springframework.boot") version "3.1.1" // 스프링 부트
+    id("io.spring.dependency-management") version "1.1.1" // 스프링 의존성 관리
 
-    kotlin("jvm") version kotlinVersion
-    kotlin("plugin.spring") version kotlinVersion
+    kotlin("jvm") version kotlinVersion // 코틀린 코드를 Java 바이트코드로 컴파일할 때 사용
+    kotlin("plugin.spring") version kotlinVersion // 코틀린 스프링 지원 (@Autowired 없는 생성자 주입, null-safety 등)
 }
 
 // 순수 코틀린 프로젝트에서는 무관한 설정이나
