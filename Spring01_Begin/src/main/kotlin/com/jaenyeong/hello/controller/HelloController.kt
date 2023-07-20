@@ -20,4 +20,10 @@ class HelloController {
         model.addAttribute("name", name)
         return "hello-template"
     }
+
+    @GetMapping("/hello-string")
+    @ResponseBody
+    fun helloString(@RequestParam("name") name: String): String {
+        return "Hello $name"
+    }
 }
