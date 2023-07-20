@@ -1,5 +1,7 @@
 package com.jaenyeong.hello.controller
 
+import com.jaenyeong.hello.dto.HelloData
+import com.jaenyeong.hello.dto.HelloValue
 import org.springframework.stereotype.Controller
 import org.springframework.ui.Model
 import org.springframework.web.bind.annotation.GetMapping
@@ -25,5 +27,17 @@ class HelloController {
     @ResponseBody
     fun helloString(@RequestParam("name") name: String): String {
         return "Hello $name"
+    }
+
+    @GetMapping("/hello-api-dataclass")
+    @ResponseBody
+    fun helloApiWithDataClass(@RequestParam("name") name: String): HelloData {
+        return HelloData(name)
+    }
+
+    @GetMapping("/hello-api-valueclass")
+    @ResponseBody
+    fun helloApiWithValueClass(@RequestParam("name") name: String): HelloValue {
+        return HelloValue(name)
     }
 }
