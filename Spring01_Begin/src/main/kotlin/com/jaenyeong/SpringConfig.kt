@@ -1,6 +1,7 @@
 package com.jaenyeong
 
 import com.jaenyeong.member.repository.JdbcMemberRepository
+import com.jaenyeong.member.repository.JdbcTemplateMemberRepository
 import com.jaenyeong.member.repository.MemberRepository
 import com.jaenyeong.member.service.MemberService
 import org.springframework.context.annotation.Bean
@@ -23,6 +24,7 @@ class SpringConfig(
     @Bean
     fun memberRepository(): MemberRepository {
 //        return MemoryMemberRepository()
-        return JdbcMemberRepository(dataSource)
+//        return JdbcMemberRepository(dataSource)
+        return JdbcTemplateMemberRepository(dataSource)
     }
 }
