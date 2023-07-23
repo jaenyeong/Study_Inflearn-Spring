@@ -1,13 +1,10 @@
-import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
-
 plugins {
-    id("org.springframework.boot") version "3.1.1" // 스프링 부트
-    id("io.spring.dependency-management") version "1.1.1" // 스프링 의존성 관리
+    kotlin("jvm")
+    kotlin("plugin.spring")
+    kotlin("plugin.jpa")
 
-    val kotlinVersion = "1.9.0"
-    kotlin("jvm") version kotlinVersion // 코틀린 코드를 Java 바이트코드로 컴파일할 때 사용
-    kotlin("plugin.spring") version kotlinVersion // 코틀린 스프링 지원 (@Autowired 없는 생성자 주입, null-safety 등)
-    kotlin("plugin.jpa") version kotlinVersion
+    id("io.spring.dependency-management")
+    id("org.springframework.boot")
 }
 
 // 순수 코틀린 프로젝트에서는 무관한 설정이나
@@ -16,9 +13,9 @@ java.sourceCompatibility = JavaVersion.VERSION_17
 group = "com.jaenyeong"
 version = "1.0.0"
 
-val kotestVersion = "5.6.2"
-
 dependencies {
+    val kotestVersion: String by project
+
     implementation("org.springframework.boot:spring-boot-starter-thymeleaf")
     implementation("org.springframework.boot:spring-boot-starter-web")
 //    implementation("org.springframework.boot:spring-boot-starter-jdbc")
@@ -39,21 +36,3 @@ dependencies {
     testImplementation("io.kotest:kotest-property:$kotestVersion")
     testImplementation("io.kotest.extensions:kotest-extensions-spring:1.1.3")
 }
-
-tasks.withType<KotlinCompile> {
-    kotlinOptions {
-        jvmTarget = "17"
-        freeCompilerArgs += "-Xjsr305=strict"
-    }
-}
-
-// 각 `Test` 태스크가 실제로 필요한 시점에 설정이 적용됨
-tasks.withType<Test>().configureEach {
-    useJUnitPlatform()
-}
-
-// configuration phase에서 `Test` 태스크를 찾아서 바로 적용
-// 구성 단계(configuration phase)에서 모든 태스크를 찾아야 하므로 큰 프로젝트일수록 성능적으로 느릴 수 있음
-//tasks.withType<Test> {
-//    useJUnitPlatform()
-//}
