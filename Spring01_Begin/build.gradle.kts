@@ -20,8 +20,11 @@ val kotestVersion = "5.6.2"
 dependencies {
     implementation("org.springframework.boot:spring-boot-starter-thymeleaf")
     implementation("org.springframework.boot:spring-boot-starter-web")
+    implementation("org.springframework.boot:spring-boot-starter-jdbc")
     implementation("org.jetbrains.kotlin:kotlin-reflect")
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
+
+    runtimeOnly("com.h2database:h2")
 
     annotationProcessor("org.springframework.boot:spring-boot-configuration-processor")
 
