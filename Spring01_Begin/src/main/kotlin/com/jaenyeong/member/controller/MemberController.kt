@@ -4,6 +4,7 @@ import com.jaenyeong.member.domain.Member
 import com.jaenyeong.member.dto.MemberForm
 import com.jaenyeong.member.service.MemberService
 import org.springframework.stereotype.Controller
+import org.springframework.ui.Model
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PostMapping
 
@@ -21,5 +22,13 @@ class MemberController(
         memberService.join(Member(name = form.name))
 
         return "redirect:/"
+    }
+
+    @GetMapping("/members")
+    fun list(model: Model): String {
+        val foundMembers = memberService.findMembers()
+        model.addAttribute("members", foundMembers)
+
+        return "members/memberList"
     }
 }
