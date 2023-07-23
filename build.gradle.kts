@@ -19,7 +19,16 @@ allprojects {
     }
 }
 
+val javaVersion = JavaVersion.VERSION_17.toString()
+
 subprojects {
+    // Java 코드가 섞여 있거나 사용하는 Java 라이브러리가 특정 JVM 버전을 요구할 수 있기 때문에 설정
+    // 순수 코틀린 프로젝트에서는 무관한 설정
+    tasks.withType<JavaCompile> {
+        sourceCompatibility = javaVersion
+        targetCompatibility = javaVersion
+    }
+
     tasks.withType<KotlinCompile> {
         kotlinOptions {
             jvmTarget = "17"

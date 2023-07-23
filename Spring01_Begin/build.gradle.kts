@@ -7,9 +7,6 @@ plugins {
     id("org.springframework.boot")
 }
 
-// 순수 코틀린 프로젝트에서는 무관한 설정이나
-// Java 코드가 섞여 있거나 사용하는 Java 라이브러리가 특정 JVM 버전을 요구할 수 있기 때문에 설정
-java.sourceCompatibility = JavaVersion.VERSION_17
 group = "com.jaenyeong"
 version = "1.0.0"
 
