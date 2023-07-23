@@ -2,9 +2,7 @@ package com.jaenyeong.member.service
 
 import com.jaenyeong.member.domain.Member
 import com.jaenyeong.member.repository.MemberRepository
-import org.springframework.stereotype.Service
 
-@Service
 class MemberService(
     private val memberRepository: MemberRepository
 ) {
