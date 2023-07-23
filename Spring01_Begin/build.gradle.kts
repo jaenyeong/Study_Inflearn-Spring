@@ -35,6 +35,7 @@ dependencies {
     // Property based testing
     // 속성, 규칙 등이 적합한지 테스트할 때 사용 (예를 들어 입력값을 무작위로 테스트하는 경우)
     testImplementation("io.kotest:kotest-property:$kotestVersion")
+    testImplementation("io.kotest.extensions:kotest-extensions-spring:1.1.3")
 }
 
 tasks.withType<KotlinCompile> {
