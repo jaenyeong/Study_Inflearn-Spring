@@ -1,7 +1,9 @@
 package com.jaenyeong.member.repository
 
 import com.jaenyeong.member.domain.Member
+import org.springframework.stereotype.Repository
 
+@Repository
 class MemoryMemberRepository : MemberRepository {
     private val memberStore: MutableMap<Long, Member> = HashMap()
     private var sequence: Long = 0L

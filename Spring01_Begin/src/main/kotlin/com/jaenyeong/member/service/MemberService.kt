@@ -2,10 +2,11 @@ package com.jaenyeong.member.service
 
 import com.jaenyeong.member.domain.Member
 import com.jaenyeong.member.repository.MemberRepository
-import com.jaenyeong.member.repository.MemoryMemberRepository
+import org.springframework.stereotype.Service
 
+@Service
 class MemberService(
-    private val memberRepository: MemberRepository = MemoryMemberRepository()
+    private val memberRepository: MemberRepository
 ) {
     fun join(member: Member): Long {
         assertUniqueMemberName(member.name)
