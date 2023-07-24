@@ -1,7 +1,7 @@
 package com.jaenyeong.spring02_basic.member
 
 class MemberServiceImpl(
-    private val memberRepository: MemberRepository = MemoryMemberRepository()
+    private val memberRepository: MemberRepository
 ) : MemberService {
 
     override fun join(member: Member) {
