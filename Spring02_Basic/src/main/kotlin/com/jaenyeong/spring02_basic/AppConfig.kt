@@ -11,6 +11,8 @@ import com.jaenyeong.spring02_basic.order.OrderServiceImpl
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
 
+// @Configuration 애너테이션을 태깅하지 않는다면
+// 아래 빈들을 생성하는 함수들에 싱글톤이 보장되지 않게 됨
 @Configuration
 class AppConfig {
 

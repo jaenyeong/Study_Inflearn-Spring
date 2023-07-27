@@ -5,7 +5,7 @@ import com.jaenyeong.spring02_basic.member.MemberRepository
 import com.jaenyeong.spring02_basic.product.Product
 
 class OrderServiceImpl(
-    private val memberRepository: MemberRepository,
+    val memberRepository: MemberRepository,
     private val discountPolicy: DiscountPolicy
 ) : OrderService {
 
