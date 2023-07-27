@@ -1,5 +1,8 @@
 package com.jaenyeong.spring02_basic.member
 
+import org.springframework.stereotype.Component
+
+@Component
 class MemberServiceImpl(
     val memberRepository: MemberRepository
 ) : MemberService {

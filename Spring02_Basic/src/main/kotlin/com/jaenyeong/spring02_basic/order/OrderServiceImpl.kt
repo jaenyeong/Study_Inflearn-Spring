@@ -3,7 +3,9 @@ package com.jaenyeong.spring02_basic.order
 import com.jaenyeong.spring02_basic.discount.DiscountPolicy
 import com.jaenyeong.spring02_basic.member.MemberRepository
 import com.jaenyeong.spring02_basic.product.Product
+import org.springframework.stereotype.Component
 
+@Component
 class OrderServiceImpl(
     val memberRepository: MemberRepository,
     private val discountPolicy: DiscountPolicy

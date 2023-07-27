@@ -2,7 +2,9 @@ package com.jaenyeong.spring02_basic.discount
 
 import com.jaenyeong.spring02_basic.member.Grade
 import com.jaenyeong.spring02_basic.member.Grade.VIP
+import org.springframework.stereotype.Component
 
+@Component
 class RateDiscountPolicy: DiscountPolicy {
     private val vipDiscountRate = 10
 
