@@ -1,5 +1,6 @@
 package com.jaenyeong.spring02_basic.order
 
+import com.jaenyeong.spring02_basic.annotation.MainDiscountPolicy
 import com.jaenyeong.spring02_basic.discount.DiscountPolicy
 import com.jaenyeong.spring02_basic.member.MemberRepository
 import com.jaenyeong.spring02_basic.product.Product
@@ -8,7 +9,7 @@ import org.springframework.stereotype.Component
 @Component
 class OrderServiceImpl(
     val memberRepository: MemberRepository,
-    private val discountPolicy: DiscountPolicy
+    @MainDiscountPolicy private val discountPolicy: DiscountPolicy
 ) : OrderService {
 
     override fun createOrder(memberId: Long, product: Product): Order {
