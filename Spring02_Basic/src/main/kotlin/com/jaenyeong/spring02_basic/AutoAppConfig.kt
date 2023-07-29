@@ -1,6 +1,7 @@
 package com.jaenyeong.spring02_basic
 
 import com.jaenyeong.spring02_basic.common.CustomInterceptor
+import com.jaenyeong.spring02_basic.common.CustomProxyInterceptor
 import org.springframework.context.annotation.ComponentScan
 import org.springframework.context.annotation.ComponentScan.Filter
 import org.springframework.context.annotation.Configuration
@@ -18,10 +19,15 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer
     excludeFilters = [Filter(type = ANNOTATION, classes = [Configuration::class])]
 )
 class AutoAppConfig(
-    private val customInterceptor: CustomInterceptor
+    private val customInterceptor: CustomInterceptor,
+    private val customProxyInterceptor: CustomProxyInterceptor
 ) : WebMvcConfigurer {
 
     override fun addInterceptors(registry: InterceptorRegistry) {
         registry.addInterceptor(customInterceptor)
+            .addPathPatterns("/custom-log/**")
+
+        registry.addInterceptor(customProxyInterceptor)
+            .addPathPatterns("/custom-proxy-log/**")
     }
 }
