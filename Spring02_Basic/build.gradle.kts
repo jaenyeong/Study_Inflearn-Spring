@@ -3,8 +3,8 @@ plugins {
     kotlin("plugin.spring")
     kotlin("plugin.jpa")
 
-    id("io.spring.dependency-management")
     id("org.springframework.boot")
+    id("io.spring.dependency-management")
 }
 
 group = "com.jaenyeong"
