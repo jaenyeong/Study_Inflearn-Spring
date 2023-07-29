@@ -10,6 +10,6 @@ class CustomLogService(
 ) {
     fun execute() {
         val logger = provider.getObject()
-        logger.log("[Service]")
+        logger.log("[CustomLogService]")
     }
 }

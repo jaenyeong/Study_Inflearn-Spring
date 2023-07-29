@@ -17,7 +17,7 @@ class CustomLogController(
     @ResponseBody
     fun customLog(request: HttpServletRequest): String {
         val logger = provider.getObject()
-        logger.log("[Controller]")
+        logger.log("[CustomLogController]")
 
         logService.execute()
 

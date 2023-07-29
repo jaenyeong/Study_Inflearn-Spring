@@ -20,7 +20,7 @@ class CustomInterceptor(
         val logger = provider.getObject()
 
         logger.changeRequestUrl(requestUrl)
-        logger.log("[Interceptor PreHandle]")
+        logger.log("[CustomInterceptor PreHandle]")
 
         return true
     }
@@ -30,13 +30,13 @@ class CustomInterceptor(
     // 뷰에서 사용되는 공통 모델 객체 데이터 추가, 처리 결과 로깅, 성능 모니터링 등에 활용될 수 있음
     override fun postHandle(request: HttpServletRequest, response: HttpServletResponse, handler: Any, modelAndView: ModelAndView?) {
         val logger = provider.getObject()
-        logger.log("[Interceptor PostHandle]")
+        logger.log("[CustomInterceptor PostHandle]")
     }
 
     // `DispatcherServlet`이 `View`를 렌더링한 후에 호출되는 함수
     // 외부 시스템 커넥션 및 파일 리소스 정리, 유저 활동 추적, 발생 예외 로깅 등에 활용될 수 있음
     override fun afterCompletion(request: HttpServletRequest, response: HttpServletResponse, handler: Any, ex: Exception?) {
         val logger = provider.getObject()
-        logger.log("[Interceptor AfterCompletion]")
+        logger.log("[CustomInterceptor AfterCompletion]")
     }
 }
