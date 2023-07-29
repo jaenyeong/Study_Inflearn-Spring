@@ -18,6 +18,8 @@ dependencies {
     implementation("org.springframework.boot:spring-boot-starter-data-jpa")
     implementation("org.jetbrains.kotlin:kotlin-reflect")
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
+    // `ProviderCountClient` 클래스의 `Provider` 인터페이스 사용을 위해 의존성 추가
+    implementation("jakarta.inject:jakarta.inject-api:2.0.1")
 
     runtimeOnly("com.h2database:h2")
 
