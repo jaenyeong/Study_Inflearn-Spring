@@ -1,6 +1,7 @@
-package com.jaenyeong.spring02_basic.web
+package com.jaenyeong.spring02_basic.web.controller
 
 import com.jaenyeong.spring02_basic.common.CustomLogger
+import com.jaenyeong.spring02_basic.web.CustomLogService
 import jakarta.servlet.http.HttpServletRequest
 import org.springframework.beans.factory.ObjectProvider
 import org.springframework.stereotype.Controller
