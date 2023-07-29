@@ -1,9 +1,12 @@
 package com.jaenyeong.spring02_basic
 
+import com.jaenyeong.spring02_basic.common.CustomInterceptor
 import org.springframework.context.annotation.ComponentScan
 import org.springframework.context.annotation.ComponentScan.Filter
 import org.springframework.context.annotation.Configuration
 import org.springframework.context.annotation.FilterType.ANNOTATION
+import org.springframework.web.servlet.config.annotation.InterceptorRegistry
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer
 
 @Configuration
 @ComponentScan(
@@ -14,4 +17,11 @@ import org.springframework.context.annotation.FilterType.ANNOTATION
 //    basePackages = ["com.jaenyeong"],
     excludeFilters = [Filter(type = ANNOTATION, classes = [Configuration::class])]
 )
-class AutoAppConfig
+class AutoAppConfig(
+    private val customInterceptor: CustomInterceptor
+) : WebMvcConfigurer {
+
+    override fun addInterceptors(registry: InterceptorRegistry) {
+        registry.addInterceptor(customInterceptor)
+    }
+}
