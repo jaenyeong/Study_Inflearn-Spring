@@ -1,1 +1,7 @@
-
+# 요청을 확인하기 위한 로깅 설정 (성능 이슈 주의할 것)
+logging:
+  level:
+    org:
+      apache:
+        coyote:
+          http11: debug
