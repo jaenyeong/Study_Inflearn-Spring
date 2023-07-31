@@ -9,9 +9,15 @@ import org.springframework.boot.web.servlet.ServletComponentScan
 @SpringBootApplication
 class Main
 
-// IDEA에 gradle의 설정이 `IDEA`가 아닌 `Gradle(Default)`로 되어 있는 상태에서
-// main 함수를 `IDEA`를 통해 run 명령을 통해 그냥 실행 시키면 `webapp`의 `index` 페이지를 찾지 못하나
-// Gradle의 `bootRun`을 통해 실행시킬 경우 `webapp`의 `index`를 찾음
+/*
+IDEA에서 멀티 모듈 구조에서 특정 하위 모듈이 `webapp`을 `static` 패스로 인식되지 않음 (현재 이유는 찾지 못함)
+- 새 프로젝트에서는 별도의 설정 없이 `webapp` 경로를 static 경로로 인식하는 것을 확인
+- 하지만 해당 멀티 모듈에서는 의존 관계가 없는 새 모듈을 생성하여 실행해도 인식하지 못했고
+  `application.yml` 설정 등으로 `static` 경로 클래스패스를 추가해보았으나 여전히 인식하지 못함
+
+`webapp`을 `static` 경로로 인식할 수 있게 하려면 Gradle의 `bootRun`을 통해 실행
+`IDEA`를 통해 main 함수를 `run` 명령으로 실행 시키면 인식하지 못하지만 `bootRun`로 실행시키면 찾음
+ */
 fun main(args: Array<String>) {
 	runApplication<Main>(*args)
 }
