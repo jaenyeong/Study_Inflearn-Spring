@@ -1,6 +1,6 @@
 package com.jaenyeong.spring02_basic.member
 
-import com.jaenyeong.spring02_basic.Main
+import com.jaenyeong.spring02_basic.Spring02BasicApplication
 import com.jaenyeong.spring02_basic.member.Grade.VIP
 import io.kotest.core.extensions.Extension
 import io.kotest.core.spec.style.BehaviorSpec
@@ -11,7 +11,7 @@ import org.springframework.boot.test.context.SpringBootTest
 import org.springframework.transaction.annotation.Transactional
 
 @SpringBootTest(
-    classes = [Main::class],
+    classes = [Spring02BasicApplication::class],
     webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT
 )
 @Transactional

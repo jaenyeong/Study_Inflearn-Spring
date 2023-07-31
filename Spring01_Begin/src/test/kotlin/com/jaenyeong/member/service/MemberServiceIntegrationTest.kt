@@ -1,6 +1,6 @@
 package com.jaenyeong.member.service
 
-import com.jaenyeong.Main
+import com.jaenyeong.Spring01BeginApplication
 import com.jaenyeong.member.domain.Member
 import io.kotest.assertions.throwables.shouldThrow
 import io.kotest.core.extensions.Extension
@@ -11,7 +11,7 @@ import org.springframework.boot.test.context.SpringBootTest
 import org.springframework.transaction.annotation.Transactional
 
 @SpringBootTest(
-    classes = [Main::class],
+    classes = [Spring01BeginApplication::class],
     webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT
 )
 @Transactional
