@@ -9,8 +9,8 @@ POST http://localhost:8080/request-header?query=name
 Content-Type: application/json
 
 {
-    "username" : "hello",
-    "age" : 20
+  "username": "hello",
+  "age": 20
 }
 
 ### RequestParamServlet1
@@ -26,4 +26,27 @@ GET http://localhost:8080/basic/hello-form.html
 POST http://localhost:8080/request-param
 Content-Type: application/x-www-form-urlencoded
 
-query=name&query=1234
+query = name &
+query = 1234
+
+### RequestBodyStringServlet
+POST http://localhost:8080/request-body-string
+Content-Type: text/plain
+
+Hello!
+
+### RequestBodyJsonServlet(json)
+POST http://localhost:8080/request-body-json
+Content-Type: application/json
+
+{
+  "username": "Hello json body",
+  "age": 77
+}
+
+### RequestBodyJsonServlet(x-www-form-urlencoded)
+POST http://localhost:8080/request-body-json
+Content-Type: application/x-www-form-urlencoded
+
+username = name &
+age = 1234
