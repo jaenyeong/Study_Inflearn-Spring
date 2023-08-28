@@ -50,3 +50,12 @@ Content-Type: application/x-www-form-urlencoded
 
 username = name &
 age = 1234
+
+### ResponseHeaderServlet
+GET http://localhost:8080/response-header
+
+### ResponseHtmlServlet
+GET http://localhost:8080/response-html
+
+### ResponseJsonServlet
+GET http://localhost:8080/response-json
