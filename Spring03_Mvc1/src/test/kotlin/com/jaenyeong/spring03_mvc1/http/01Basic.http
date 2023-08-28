@@ -12,3 +12,9 @@ Content-Type: application/json
     "username" : "hello",
     "age" : 20
 }
+
+### RequestParamServlet1
+GET http://localhost:8080/request-param?query=name
+
+### RequestParamServlet2
+GET http://localhost:8080/request-param?query=name&query=1234
