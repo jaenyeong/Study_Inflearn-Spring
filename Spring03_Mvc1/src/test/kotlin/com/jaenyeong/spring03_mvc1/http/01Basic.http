@@ -18,3 +18,12 @@ GET http://localhost:8080/request-param?query=name
 
 ### RequestParamServlet2
 GET http://localhost:8080/request-param?query=name&query=1234
+
+### Hello-form.html
+GET http://localhost:8080/basic/hello-form.html
+
+### RequestParamServlet3
+POST http://localhost:8080/request-param
+Content-Type: application/x-www-form-urlencoded
+
+query=name&query=1234
