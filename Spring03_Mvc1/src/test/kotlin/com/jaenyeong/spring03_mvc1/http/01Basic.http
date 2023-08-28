@@ -1,7 +1,14 @@
 ### HelloServlet
 GET http://localhost:8080/hello?username=haha
 
----
-
 ### index.html
 GET http://localhost:8080
+
+### RequestHeaderServlet
+POST http://localhost:8080/request-header?query=name
+Content-Type: application/json
+
+{
+    "username" : "hello",
+    "age" : 20
+}
